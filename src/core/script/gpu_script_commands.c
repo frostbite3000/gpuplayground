@@ -16,8 +16,6 @@
 #include <stdio.h>
 
 
-#include "architecture/nv3/nv3.h"
-#include "architecture/nv3/nv3_ref.h"
 #include "core/tests/tests.h"
 #include "util/util.h"
 #include <gpuplay.h>
@@ -268,7 +266,7 @@ bool Command_PrintError()
 
 bool Command_PrintVersion()
 {
-   	Logging_Write(log_level_message, APP_SIGNON_STRING);
+    Logging_Write(log_level_message, APP_SIGNON_STRING);
     return true; 
 }
 
