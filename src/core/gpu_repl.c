@@ -1,0 +1,44 @@
+/* 
+    GPUPlay
+    Copyright © 2025 frostbite3000
+
+    Raw GPU programming for Other GPUs
+    Licensed under the MIT license (see license file)
+
+    gpu_repl.c: Implements the Read-Eval-Print loop for gpu i/o
+*/
+
+#include "util/util.h"
+#include <gpuplay.h>
+
+bool repl_is_running = true; 
+
+void GPURepl_Run()
+{
+    char repl_string[MAX_STR] = {0};
+
+    Logging_Write(log_level_message, "Welcome to GPUPlay\n");
+    Logging_Write(log_level_message, "Type supported GPU commands. Type q or exit to exit.\n");
+
+    while (repl_is_running)
+    {
+        Logging_Write(log_level_message, "GPU>");
+
+        // paranoid version of using scanf for this with a strictly limited size
+        fgets(repl_string, MAX_STR, stdin);
+    
+        // get rid of the newline (could call String_GetRTrim(String_GetLTrim) but that does a lot of unnecessary stuff we don't need yet)
+        repl_string [ strcspn(repl_string, "\r\n") ] = '\0';
+
+        // gcc only so it is fine
+        if (!strcasecmp(repl_string, "q")
+        || !strcasecmp(repl_string, "exit"))
+        {
+            repl_is_running = false; 
+        }
+        else 
+        {
+            Script_RunCommand(repl_string);        
+        }
+    }
+}
