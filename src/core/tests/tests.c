@@ -22,9 +22,9 @@
 nv_test_t nv_tests[] = 
 {
     // Generic tests
-    { PCI_VENDOR_GENERIC, PCI_DEVICE_GENERIC, "NV_DumpPCI", "NV Generic - Dump PCI", NVGeneric_DumpPCISpace},
-    { PCI_VENDOR_GENERIC, PCI_DEVICE_GENERIC, "NV_DumpMMIO", "NV Generic - Dump MMIO", NVGeneric_DumpMMIO},
-    { PCI_VENDOR_GENERIC, PCI_DEVICE_GENERIC, "NV_DumpVBIOS", "NV Generic - Dump VBIOS", NVGeneric_DumpVBIOS},
+    { PCI_VENDOR_GENERIC, PCI_DEVICE_GENERIC, "GPU_DumpPCI", "GPU Generic - Dump PCI", NVGeneric_DumpPCISpace},
+    { PCI_VENDOR_GENERIC, PCI_DEVICE_GENERIC, "GPU_DumpMMIO", "GPU Generic - Dump MMIO", NVGeneric_DumpMMIO},
+    { PCI_VENDOR_GENERIC, PCI_DEVICE_GENERIC, "GPU_DumpVBIOS", "GPU Generic - Dump VBIOS", NVGeneric_DumpVBIOS},
 
     // Rage128 Pro PF tests
     { PCI_VENDOR_ATI, PCI_DEVICE_RAGE128_PRO_PF, "R128_DumpMfgInfo", "Rage128 Pro PF - Dump Mfg Info", r128_dump_mfg_info},
